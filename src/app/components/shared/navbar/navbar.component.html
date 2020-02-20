@@ -1,0 +1,75 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-white" [containerInside]="false">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" href="/home">HOSTBNB</a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+
+    <ul class="navbar-nav ml-auto">
+
+     
+      <!-- <li class="nav-item active">
+        <a class="nav-link white" mdbWavesEffect>About Us<span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link white" mdbWavesEffect>
+          <!-- <mdb-icon fas icon="envelope"></mdb-icon> -->
+          <!-- Contact</a>
+      </li> --> 
+
+
+      <ng-template [ngIf]="!isLoggedIn">
+        <li class="nav-item active">
+          <a class="nav-link white" href="/login" mdbWavesEffect>Sign In<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link white" href="/signup" mdbWavesEffect>Sign Up<span class="sr-only">(current)</span></a>
+        </li>
+      </ng-template>
+
+      <ng-template [ngIf]="isLoggedIn">
+         <li class="nav-item active">
+        <a class="nav-link white" mdbWavesEffect>Hello, {{username}}<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle white" mdbWavesEffect>
+          Services<span class="caret"></span></a>
+        <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item white" mdbWavesEffect href="/cm">Complete Management</a>
+          <a class="dropdown-item white" mdbWavesEffect href="/cleaning">Cleaning</a>
+          <a class="dropdown-item white" mdbWavesEffect href="/gm">Guest Management</a>
+          <a class="dropdown-item white" mdbWavesEffect href="/pm">Property Maintenance</a>
+        </div>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link white" href="/posts/all" mdbWavesEffect>Listenings<span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link white" href="/post/create" mdbWavesEffect>Add New Listening<span
+            class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link white" href="/posts/user" mdbWavesEffect>My Listenings<span
+            class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link white" (click)="logout()" mdbWavesEffect>Log Out<span class="sr-only">(current)</span></a>
+      </li>
+      </ng-template>
+     
+
+
+    </ul>
+    <!-- Links -->
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->

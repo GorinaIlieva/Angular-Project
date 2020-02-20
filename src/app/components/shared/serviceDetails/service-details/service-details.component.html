@@ -1,0 +1,28 @@
+
+<!-- <ng-template [ngIf]="oneService"> -->
+    <mdb-card
+style="background-image: url({{oneService.imageUrl}})"
+class="card-image mb-3 mx-2"
+>
+<!-- Content -->
+<div class="text-black accent-2 bold text-center d-flex align-items-center py-5 px-4">
+  <div>
+    <mdb-card-img [src]=oneService.imageUrl height= '70' width= '70'></mdb-card-img>
+    <!-- <h5 class=" purple-text">
+      <mdb-icon fas icon="chart-pie"></mdb-icon>
+      {{oneService.name}}
+    </h5> -->
+    <h3 class="card-title pt-2"><strong>{{oneService.name}}</strong></h3>
+    <p>
+      {{oneService.details}}
+    </p>
+    <a mdbBtn gradient="peach" mdbWavesEffect (click)='goBack()'>Back</a>
+    <!-- <a mdbBtn gradient="peach" mdbWavesEffect> <mdb-icon fas icon="clone" class="left"></mdb-icon>FIND OUT MORE</a> -->
+    
+  </div>
+</div>
+<!-- Content -->
+</mdb-card>
+<!-- </ng-template> -->
+
+

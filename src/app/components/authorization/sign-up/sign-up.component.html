@@ -1,0 +1,105 @@
+<!-- Default form register -->
+<form #signUpForm="ngForm" (ngSubmit)="signup(signUpForm.value)" class="text-center border border-light p-5">
+    <!-- <pre>{{signUpForm.value | json}}</pre> -->
+    <p class="h4 mb-5">Sign up</p>
+
+    <div class="form-row mb-4">
+        <div class="col">
+            <!-- First name -->
+            <input required ngModel name="firstName" pattern="[A-Z][a-z]+" type="text" id="defaultRegisterFormFirstName"
+                class="form-control" placeholder="First name">
+            <div class="alert alert-danger" *ngIf="signUpForm?.controls.firstName?.touched 
+        && signUpForm?.controls.firstName?.errors?.required">This field is required!</div>
+            <div class="alert alert-danger" *ngIf="signUpForm?.controls.firstName?.errors?.pattern">First name should
+                start
+                with a capital letter</div>
+        </div>
+
+
+        <div class="col">
+            <!-- Last name -->
+            <input required ngModel name="lastName" pattern="[A-Z][a-z]+" type="text" id="defaultRegisterFormLastName"
+                class="form-control" placeholder="Last name">
+            <div class="alert alert-danger" *ngIf="signUpForm?.controls.lastName?.touched
+         && signUpForm?.controls.lastName?.errors?.required">This field is required!</div>
+            <div class="alert alert-danger" *ngIf="signUpForm?.controls.lastName?.errors?.pattern">Last name should
+                start with capital letter</div>
+        </div>
+
+        <div class="col">
+            <!-- user name -->
+            <input required ngModel name="username" pattern="[A-Z][a-z]+" type="text" id="defaultRegisterFormUserName"
+                class="form-control" placeholder="User name">
+            <div class="alert alert-danger" *ngIf="signUpForm?.controls.username?.touched 
+        && signUpForm?.controls.username?.errors?.required">This field is required!</div>
+            <div class="alert alert-danger" *ngIf="signUpForm?.controls.username?.errors?.pattern">User name should
+                start with a capital letter</div>
+        </div>
+    </div>
+
+    <!-- E-mail -->
+    <input required ngModel name="email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+        type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
+    <div class="alert alert-danger"
+        *ngIf="signUpForm?.controls.email?.touched && signUpForm?.controls.email?.errors?.required">This field is
+        required!</div>
+    <div class="alert alert-danger" *ngIf="signUpForm?.controls.email?.errors?.pattern">This is no valid E-mail</div>
+    
+    <!-- Password -->
+    <input required ngModel name="password" pattern= "^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{8,}$" type="password" id="defaultRegisterFormPassword" class="form-control"
+        placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+        <div class="alert alert-danger"
+        *ngIf="signUpForm?.controls.password?.touched && signUpForm?.controls.password?.errors?.required">This field is
+        required!</div>
+        <div class="alert alert-danger" *ngIf="signUpForm?.controls.password?.errors?.pattern">You are missing something!</div>
+    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+       At least 8 characters -  at least one capital and one small letter, one number and one special character
+    </small>
+
+
+    <!-- Phone number -->
+    <input required ngModel name="phoneNumber" pattern="\+359(\s?)\d{9}" type="text" id="defaultRegisterPhonePassword" class="form-control"
+        placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+        <div class="alert alert-danger"
+        *ngIf="signUpForm?.controls.phoneNumber?.touched && signUpForm?.controls.phoneNumber?.errors?.required">This field is
+        required!</div>
+        <div class="alert alert-danger" *ngIf="signUpForm?.controls.phoneNumber?.errors?.pattern">You are missing something!</div>
+    <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+        Starts with +359 ...
+    </small>
+
+    <!-- Newsletter -->
+    <!-- <div class="row">
+      <div class="col-md-6 mx-auto d-flex justify-content-center">
+        <mdb-checkbox [default]="true">Subscribe to our newsletter</mdb-checkbox>
+      </div>
+    </div> -->
+
+    <!-- Sign up button -->
+    <button mdbBtn [disabled]=signUpForm.invalid color="info" block="true" class="my-4" type="submit">Sign in</button>
+   
+    <!-- Social register -->
+    <!-- <p>or sign up with:</p>
+
+    <a type="button" class="light-blue-text mx-2">
+        <mdb-icon fab icon="facebook"></mdb-icon>
+    </a>
+    <a type="button" class="light-blue-text mx-2">
+        <mdb-icon fab icon="twitter"></mdb-icon>
+    </a>
+    <a type="button" class="light-blue-text mx-2">
+        <mdb-icon fab icon="linkedin"></mdb-icon>
+    </a>
+    <a type="button" class="light-blue-text mx-2">
+        <mdb-icon fab icon="github"></mdb-icon>
+    </a> -->
+
+    <hr>
+
+    <!-- Terms of service -->
+    <!-- <p>By clicking
+        <em>Sign up</em> you agree to our
+        <a href="" target="_blank">terms of service</a></p> -->
+
+</form>
+<!-- Default form register -->

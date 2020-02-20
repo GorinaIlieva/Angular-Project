@@ -1,0 +1,61 @@
+<mdb-card
+    style="background-image: url('https://images.squarespace-cdn.com/content/v1/5c5889bb2727be21a019b287/1561535973347-8OZV4PPRYHTMEWG0F96P/ke17ZwdGBToddI8pDm48kNZ2fC_w91Nrpom3qI3kxzoUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcvmhmzAQ7Oryp2maFvgVUPRewFjnIxrp9ggUmv3fM2hRJk4zyDU9sJ6jMZkJOQbXt/TateUrbanLiving_Ruytenburgstraat74-9.jpg?format=2500w')">
+    <div class="text-white text-center rgba-stylish-strong py-5 px-4">
+
+        <div class="py-5">
+            <ng-template [ngIf]='!isLoggedIn'>
+                <!-- Content -->
+                <!-- <h5 class="h5 orange-text"><mdb-icon fas icon="camera-retro"></mdb-icon> Photography</h5> -->
+                <h2 class="card-title h2 my-4 py-2">Check the rental forecast of your property now</h2>
+
+                <!-- <div>
+          <form>
+   
+    <div class="form-row">
+     
+      <div class="col-7">
+        
+        <div class="md-form">
+          <input mdbInput type="text" class="form-control" value="Email">
+        </div>
+      </div>
+     
+  
+     
+      <div class="col">
+       
+        <div class="md-form">
+          <input mdbInput type="text" class="form-control" placeholder="Name">
+        </div>
+      </div>
+    
+  
+   
+      <div class="col">
+       
+        <div class="md-form">
+          <input mdbInput type="text" class="form-control" placeholder="Phone">
+        </div>
+      </div>
+     
+    </div>
+  
+  </form>
+      </div>   -->               <!-- <p class="mb-4 pb-2 px-md-5 mx-md-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur obcaecati vero aliquid libero doloribus ad, unde tempora maiores, ullam, modi qui quidem minima debitis perferendis vitae cumque et quo impedit.</p> -->
+                <a mdbBtn gradient="peach" href='/signup' mdbWavesEffect>
+                    <!-- <mdb-icon fas icon="clone" class="left"></mdb-icon> -->
+                    SIGN UP NOW</a>
+            </ng-template>
+            <ng-template [ngIf]='isLoggedIn'>
+                <!-- Content -->
+                <!-- <h5 class="h5 orange-text"><mdb-icon fas icon="camera-retro"></mdb-icon> Photography</h5> -->
+                <h2 class="card-title h2 my-4 py-2">Earn more today</h2>
+
+                <!-- <p class="mb-4 pb-2 px-md-5 mx-md-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur obcaecati vero aliquid libero doloribus ad, unde tempora maiores, ullam, modi qui quidem minima debitis perferendis vitae cumque et quo impedit.</p> -->
+                <a mdbBtn gradient="peach" href='/post/create' mdbWavesEffect>
+                    <mdb-icon fas icon="clone" class="left"></mdb-icon>ADD NEW LISTENING
+                </a>
+            </ng-template>
+        </div>
+    </div>
+</mdb-card>

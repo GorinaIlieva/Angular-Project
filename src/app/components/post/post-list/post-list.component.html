@@ -1,0 +1,84 @@
+<!-- Extended material form grid -->
+<form #createForm="ngForm" (ngSubmit)="create(createForm.value)">
+    <!-- <pre>{{createForm.value | json}}</pre> -->
+    <!-- Grid row -->
+    <div class="form-row">
+          <!-- Grid column -->
+          <div class="col-md-6">
+            <!-- Material input -->
+            <div class="md-form form-group">
+                <input ngModel name="title" required mdbInput type="text" class="form-control" id="inputTitleMD"
+                    placeholder="Give it a title">
+                <div class="alert alert-danger" *ngIf="createForm?.controls.title?.touched && createForm?.controls.title?.errors?.required">This field
+                    is required!</div> 
+                <label for="inputTitleMD">Title</label>
+            </div>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6">
+            <!-- Material input -->
+            <div class="md-form form-group">
+                <input ngModel name="address" required mdbInput type="text" class="form-control" id="inputAddressMD"
+                    placeholder="Street name, Str numbere">
+                <div class="alert alert-danger" *ngIf="createForm?.controls.address?.touched && createForm?.controls.address?.errors?.required">This field
+                    is required!</div> 
+                <label for="inputAddressMD">Address</label>
+            </div>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6">
+            <!-- Material input -->
+            <div class="md-form form-group">
+                <input ngModel name="city" required mdbInput type="text" class="form-control" id="inputCityMD"
+                    placeholder="Varna, 9000">
+                <div class="alert alert-danger" *ngIf="createForm?.controls.city?.touched && createForm?.controls.city?.errors?.required">This field is
+                    required!</div>
+                <label for="inputCityMD">City and ZIP Code</label>
+            </div>
+        </div>
+        <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+
+    <!-- Grid row -->
+    <div class="row">
+        <!-- Grid column -->
+        <div class="col-md-12">
+            <!-- Material input -->
+            <div class="md-form form-group">
+                <input ngModel name="description" required pattern=".{30,}" mdbInput type="text" class="form-control"
+                    id="inputDescriptionMD"
+                    placeholder="Tell us more about it - beds number, is there a kitchen or a terrace....">
+                <div class="alert alert-danger" *ngIf="createForm?.controls.description?.touched && createForm?.controls.description?.errors?.required">This
+                    field is required!</div>
+
+                    <div class="alert alert-danger" *ngIf="createForm?.controls.description?.errors?.pattern">Description should be at least 30 characters!</div>
+                <label for="inputDescriptionMD">Description</label>
+            </div>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-12">
+            <!-- Material input -->
+            <div class="md-form form-group">
+                <input ngModel name="imageUrl" required pattern = "(https?:\/\/.*\.(?:png|jpg))" mdbInput type="text" class="form-control" id="inputImage2MD"
+                    placeholder="Image URL...">
+                <div class="alert alert-danger" *ngIf="createForm?.controls.imageUrl?.touched && createForm?.controls.imageUrl?.errors?.required">This field
+                    is required!</div>
+
+                    <div class="alert alert-danger" *ngIf="createForm?.controls.imageUrl?.errors?.pattern">ImageUrl should have following format: https or http://******.jpg or.png</div>
+                <label for="inputImage2MD">Image</label>
+            </div>
+        </div>
+        <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+
+    <button [disabled] = createForm.invalid type="submit" mdbBtn color="primary">Submit</button>
+</form>
+<!-- Extended material form grid -->
