@@ -1,6 +1,6 @@
 # MdbAngularFree
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2. It represets a site for managing realestate like airbnb or booking. There you can list your proprety (# add listening), see all the propreties listed (# listenings) or manage merely your listenings (# my listening). In the section Services, you can go through all the services provided like cumtomer or # property management, #cleaning, etc. Part of the services are also listed on the # home page, after a successful log in.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2. It represets a site for managing realestate like airbnb or booking. There you can list your proprety (# add listening), see all the propreties listed (# listenings) or manage merely your listenings (#my listening). In the section Services, you can go through all the services provided like cumtomer or # property management, #cleaning, etc. Part of the services are also listed on the # home page, after a successful log in.
 
 ## Development server
 
