@@ -23,12 +23,12 @@ export class PostService {
   }
 
   getAllPosts():Observable<PostEach[]>{
-    console.log('fetching')
+    
     return this.http.get<PostEach[]>(`https://baas.kinvey.com/appdata/${APP_KEY}/listenings`)
   }
 
   deletePost(id:string){
-    console.log('del')
+    
     return this.http.delete<PostEach>(`https://baas.kinvey.com/appdata/${APP_KEY}/listenings/${id}`)
   }
 

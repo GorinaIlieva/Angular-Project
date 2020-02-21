@@ -2,12 +2,8 @@ import { NgModule } from '@angular/core';
 // import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ServiceDetailsComponent } from './components/shared/serviceDetails/service-details/service-details.component';
-import { ServiceSectionListComponent } from './components/shared/service-sections/service-section-list/service-section-list.component';
-import { ServiceSectionListResolver } from './components/shared/service-sections/service-section-list/service-sections-listCustomerManagement.resolver';
-import { ServiceSectionListCleaningResolver } from './components/shared/service-sections/service-section-list/service-section-listCleaning.resolver';
-import { ServiceGuestManagementResolver } from './components/shared/service-sections/service-section-list/service-section-listGuestManagement.resolver';
-import { ServicePropertyManagementResolver } from './components/shared/service-sections/service-section-list/service-section-listPropertyManagement.resolver';
+
+
 import { LandingComponent } from './components/servicesLandingPage/landing/landing.component';
 import { ServiceDetailsResolver } from './theCore/resolvers/serviceDetailsResolver/service-details.resolver';
 import { SignUpComponent } from './components/authorization/sign-up/sign-up.component';
@@ -17,10 +13,15 @@ import { PostListComponent } from './components/post/post-list/post-list.compone
 import { PostAllComponent } from './components/post/post-all/post-all/post-all.component';
 import { AllPostResolver } from './theCore/resolvers/allPostResolver/all-post-resolver.service';
 import { PostDetailsComponent } from './components/post/post-details/post-details.component';
-import { PostDetailsResolver } from './theCore/resolvers/postDetailsResover/post-details-resolver.service';
+import { PostDetailsResolverService } from './theCore/resolvers/postDetailsResover/post-details-resolver.service';
 import { PostUserComponent } from './components/post/post-user/post-user.component';
 import { PostEditComponent } from './components/post/post-edit/post-edit.component';
-
+import { ServiceDetailsComponent } from './components/serviceDetails/service-details/service-details.component';
+import { ServiceSectionListComponent } from './components/service-sections/service-section-list/service-section-list.component';
+import { ServiceGuestManagementResolver } from './theCore/resolvers/serviceSectionResolvers/service-section-listGuestManagement.resolver';
+import { ServiceSectionListCleaningResolver } from './theCore/resolvers/serviceSectionResolvers/service-section-listCleaning.resolver';
+import {ServiceSectionListResolver} from './theCore/resolvers/serviceSectionResolvers/service-sections-listCustomerManagement.resolver';
+import {ServicePropertyManagementResolver} from './theCore/resolvers/serviceSectionResolvers/service-section-listPropertyManagement.resolver';
 
 
 const routes: Routes = [
@@ -36,9 +37,9 @@ const routes: Routes = [
   { path: 'pm', component: ServiceSectionListComponent, resolve: [ServicePropertyManagementResolver] },
   { path: 'post/create', component: PostListComponent },
   { path: 'posts/all', component: PostAllComponent, resolve: [AllPostResolver] },
-  { path: 'post/:id', component: PostDetailsComponent, resolve: [PostDetailsResolver] },
+  { path: 'post/:id', component: PostDetailsComponent, resolve: [PostDetailsResolverService] },
   { path: 'posts/user', component: PostUserComponent, resolve: [AllPostResolver] },
-  { path: 'post/edit/:id', component: PostEditComponent, resolve: [PostDetailsResolver] },
+  { path: 'post/edit/:id', component: PostEditComponent, resolve: [PostDetailsResolverService] },
   // {path: 'post', children: [
   //     { path: 'create', component: PostListComponent },
   //     { path: 'all', component: PostAllComponent, resolve: [AllPostResolver] },

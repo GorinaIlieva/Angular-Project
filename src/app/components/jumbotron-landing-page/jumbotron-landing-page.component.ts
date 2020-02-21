@@ -11,8 +11,9 @@ isLoggedIn: boolean
   constructor(
     private authService: AuthenticationService
   ) { }
-
+  
   ngOnInit() {
+    console.log('logouTTTT')
     this.isLoggedIn= this.authService.isAuthenticated()
   }
 

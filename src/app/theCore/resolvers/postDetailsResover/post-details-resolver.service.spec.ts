@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PostDetailsResolverService } from '../post-details-resolver.service';
+import {PostDetailsResolverService} from './post-details-resolver.service'
 
 describe('PostDetailsResolverService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

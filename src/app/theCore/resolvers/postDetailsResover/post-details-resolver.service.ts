@@ -6,7 +6,7 @@ import { PostEach } from 'src/app/components/shared/models/postEach-interface/po
 @Injectable({
   providedIn: 'root'
 })
-export class PostDetailsResolver implements Resolve<PostEach>{
+export class PostDetailsResolverService implements Resolve<PostEach>{
 
   constructor(
     private postService: PostService

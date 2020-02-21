@@ -23,6 +23,7 @@ export class NavbarComponent implements OnInit, DoCheck {
   ngOnInit(){}
 
   ngDoCheck() {
+    console.log('NAvTS logouTTTT')
     this.isLoggedIn = this.authService.isAuthenticated()
    
     this.username = localStorage.getItem('user')
@@ -34,7 +35,9 @@ export class NavbarComponent implements OnInit, DoCheck {
   async logout() {
     try {
       await this.userService.logout()
+      
       localStorage.clear()
+     
       this.router.navigate(['/home'])
       
     } catch (error) {

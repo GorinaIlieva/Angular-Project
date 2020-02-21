@@ -16,17 +16,18 @@ export class ResponseHandlerInterceptorService implements HttpInterceptor {
     return next.handle(request).pipe(
       tap((succ) => {
         if (succ instanceof HttpResponse) {
-          if (succ.url.endsWith('login') || succ.url.endsWith('signup') || succ.url.endsWith('create') || succ.url.includes('delete')) {
-           console.log(succ)
+          // if (succ.url.endsWith('login') || succ.url.endsWith('signup') || succ.url.endsWith('create') || succ.url.includes('delete')) {
+        //  console.log(succ)
             return this.toastr.success('Success', 'Success')
-          }
+          // }
         }
       }),
       catchError((error: HttpErrorResponse) => {
-        if (error.error instanceof ErrorEvent) {
-          this.toastr.error(error.error.error, 'Error')
+        // if (error.error instanceof ErrorEvent) {
+          console.log(error)
+          this.toastr.error('Error', 'Error')
           return throwError
-        }
+        
 
       }))
   }

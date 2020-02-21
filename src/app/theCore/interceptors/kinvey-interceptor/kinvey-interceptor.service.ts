@@ -3,42 +3,40 @@ import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpResponse } fr
 import { Observable } from 'rxjs';
 import { AuthenticationService } from '../../services/authService/authentication.service';
 import { map } from 'rxjs/operators';
+import { APP_KEY, APP_SECRET } from 'src/app/kinvey.credentials';
 
 @Injectable({
-   providedIn: 'root'
- })
+  providedIn: 'root'
+})
 export class KinveyInterceptorService implements HttpInterceptor {
 
   constructor(private authService: AuthenticationService) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-   
-
-    // let jsonReq= request.clone({
-    //   setHeaders:{
-    //     Authorization:`Kinvey ${this.authService.authtoken}`,
+    console.log('request', request)
+    // if (request.url.endsWith(`/user/${APP_KEY}`) || request.url.endsWith('login')) {
+    //   request = request.clone({
+    //     setHeaders: {
+    //       'Authorization': `Baisc ${btoa(`${APP_KEY}:${APP_SECRET}`)}`,
+    //       'Content-Type': 'application/json'
     //     }
-    // }) 
-    request = request.clone({
-      headers: request.headers.set('Authorization', `Kinvey ${this.authService.authtoken}`)});
-
-  
-    request = request.clone({ 
-      headers: request.headers.set('Content-Type', 'application/json') });
+    //   })
+    // } else {
+      request = request.clone({
+        headers: request.headers.set('Authorization', `Kinvey ${this.authService.authtoken}`)
+      });
 
 
+      request = request.clone({
+        headers: request.headers.set('Content-Type', 'application/json')
+      });
+    // }
+    return next.handle(request)
 
-      return next.handle(request)
-      // .pipe((
-      //   map((event: HttpEvent<any>) => {
-      //     if (event instanceof HttpResponse) {
-      //       // console.log('event--->>>', event);
-      //     }
-      //     return event;
-      //   })
-      // ))
-
-    }
-
-
+  }
 }
+// let jsonReq= request.clone({
+//   setHeaders:{
+//     Authorization:`Kinvey ${this.authService.authtoken}`,
+//     }
+// }) 

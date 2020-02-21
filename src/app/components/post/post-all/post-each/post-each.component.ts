@@ -26,15 +26,13 @@ export class PostEachComponent implements OnInit {
 
   deletePost(id: string) {
     this.postService.deletePost(id).subscribe(() => {
-      
-
      this.router.navigate(['/posts/all']).then(() => console.log('redirected'))
 
     });
   }
 
   isAuthor(post: Object) {
-    console.log('the comp')
+   
     return this.authService.isAuthorOr(post)
   }
 
