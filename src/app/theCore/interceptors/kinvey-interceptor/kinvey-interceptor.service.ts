@@ -14,14 +14,14 @@ export class KinveyInterceptorService implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     console.log('request', request)
-    // if (request.url.endsWith(`/user/${APP_KEY}`) || request.url.endsWith('login')) {
-    //   request = request.clone({
-    //     setHeaders: {
-    //       'Authorization': `Baisc ${btoa(`${APP_KEY}:${APP_SECRET}`)}`,
-    //       'Content-Type': 'application/json'
-    //     }
-    //   })
-    // } else {
+    if (request.url.endsWith(`/user/${APP_KEY}`) || request.url.endsWith('login')) {
+      request = request.clone({
+        setHeaders: {
+          'Authorization': `Baisc ${btoa(`${APP_KEY}:${APP_SECRET}`)}`,
+          'Content-Type': 'application/json'
+        }
+      })
+    } else {
       request = request.clone({
         headers: request.headers.set('Authorization', `Kinvey ${this.authService.authtoken}`)
       });
@@ -30,7 +30,8 @@ export class KinveyInterceptorService implements HttpInterceptor {
       request = request.clone({
         headers: request.headers.set('Content-Type', 'application/json')
       });
-    // }
+      
+    }
     return next.handle(request)
 
   }

@@ -4,6 +4,7 @@ import { ServiceSectionListComponent } from './service-section-list/service-sect
 import { ServiceEachSectionComponent } from './service-each-section/service-each-section.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { RouterModule } from '@angular/router';
+import { JumbotronPostPagesModule } from '../jumbotron-post-pages/jumbotron-post-pages/jumbotron-post-pages.module';
 
 
 
@@ -17,7 +18,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     MDBBootstrapModule,
-    RouterModule
+    RouterModule,
+    JumbotronPostPagesModule
   ],
  
 

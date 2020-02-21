@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'kinvey-angular-sdk';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/theCore/services/authService/authentication.service';
-import { NgForm } from '@angular/forms';
 
 
 @Component({

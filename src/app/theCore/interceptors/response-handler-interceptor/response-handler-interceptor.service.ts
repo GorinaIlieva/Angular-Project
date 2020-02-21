@@ -14,6 +14,7 @@ export class ResponseHandlerInterceptorService implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     return next.handle(request).pipe(
+
       tap((succ) => {
         if (succ instanceof HttpResponse) {
           // if (succ.url.endsWith('login') || succ.url.endsWith('signup') || succ.url.endsWith('create') || succ.url.includes('delete')) {
@@ -22,14 +23,17 @@ export class ResponseHandlerInterceptorService implements HttpInterceptor {
           // }
         }
       }),
-      catchError((error: HttpErrorResponse) => {
-        // if (error.error instanceof ErrorEvent) {
+      catchError((error) => {
+         if (error instanceof HttpErrorResponse) {
           console.log(error)
           this.toastr.error('Error', 'Error')
-          return throwError
+        return throwError(error);
+         }
         
 
-      }))
+      }
+      
+      ))
   }
 }
 

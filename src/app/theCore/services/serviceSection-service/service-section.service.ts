@@ -6,15 +6,6 @@ import { APP_KEY } from 'src/app/kinvey.credentials';
 import ServiceEachSection from 'src/app/components/shared/models/service-section-interface/serviceEachSection';
 
 
-const headers = {
-  method: 'GET',
-  headers: {
-    'Authorization': 'Kinvey 6ba4f0cc-6d7e-46e2-a3cd-a42663ee1576.OGShy0Z4Exm2/kkDnelxUTvXJu450mFYZZatw7lRHfA=',
-    'Content-Type': 'application/json'
-  }
-};
-
-
 
 @Injectable({
   providedIn: 'root'
@@ -24,18 +15,18 @@ export class ServiceSectionService {
   constructor(private http: HttpClient) { }
 
   getCmServiceList() {
-    return this.http.get<ServiceEachSection[]>(`https://baas.kinvey.com/appdata/${APP_KEY}/customermanagement`, headers)
+    return this.http.get<ServiceEachSection[]>(`https://baas.kinvey.com/appdata/${APP_KEY}/customermanagement`)
   }
 
   getCleaningServiceList() {
-       return this.http.get<ServiceEachSection[]>(`https://baas.kinvey.com/appdata/${APP_KEY}/cleaning`, headers)
+       return this.http.get<ServiceEachSection[]>(`https://baas.kinvey.com/appdata/${APP_KEY}/cleaning`)
   }
 
   getGuestManagementServiceList(){
-    return this.http.get<ServiceEachSection[]>(`https://baas.kinvey.com/appdata/${APP_KEY}/guestmanagement`, headers)
+    return this.http.get<ServiceEachSection[]>(`https://baas.kinvey.com/appdata/${APP_KEY}/guestmanagement`)
   }
 
   getPropertyManagementServiceList(){
-    return this.http.get<ServiceEachSection[]>(`https://baas.kinvey.com/appdata/${APP_KEY}/propertymanagement`, headers)
+    return this.http.get<ServiceEachSection[]>(`https://baas.kinvey.com/appdata/${APP_KEY}/propertymanagement`)
   }
 }

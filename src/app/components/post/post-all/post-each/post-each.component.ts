@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class PostEachComponent implements OnInit {
 
   @Input('postEach') public postEach: PostEach
-  postAll: PostEach[]
+ 
 
   constructor(
     private authService: AuthenticationService,

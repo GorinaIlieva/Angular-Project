@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit, DoCheck {
   ngOnInit(){}
 
   ngDoCheck() {
-    console.log('NAvTS logouTTTT')
+    
     this.isLoggedIn = this.authService.isAuthenticated()
    
     this.username = localStorage.getItem('user')

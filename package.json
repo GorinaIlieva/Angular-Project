@@ -51,5 +51,16 @@
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GorinaIlieva/Angular-Project.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/GorinaIlieva/Angular-Project/issues"
+  },
+  "homepage": "https://github.com/GorinaIlieva/Angular-Project#readme"
 }
